@@ -13,3 +13,34 @@ function getComputerChoice(){
     }   
 }
 console.log(getComputerChoice());
+
+// a function that plays a single round of Rock Paper Scissors. 
+    //the function takes two parameters of playerSelection and computerSelection.
+        //playerSelection could be taken from a prompt (case insensitive).
+    //then returns a string that declares the winner of the round. 
+
+let playerSelection = prompt("Choose a hand by typing Rock, Paper or Scissors").toLowerCase()
+console.log(playerSelection);
+
+function firstRound(){
+    if (getComputerChoice() == "rock" && playerSelection == "paper"){
+        return "Ayo dam, u win." 
+    } else if (getComputerChoice() == "rock" && playerSelection == "scissors"){
+        return "What a nub, u lose."
+    } else if (getComputerChoice() == "rock" && playerSelection == "rock"){
+        return "Boring. Draw game."
+    } else if (getComputerChoice() == "paper" && playerSelection == "scissors"){
+        return "Ayo dam, u win."
+    } else if (getComputerChoice() == "paper" && playerSelection == "rock"){
+        return "What a nub, u lose."
+    } else if (getComputerChoice() == "paper" && playerSelection == "paper"){
+        return "Boring. Draw game."
+    } else if (getComputerChoice() == "scissors" && playerSelection == "rock"){
+        return "Ayo dam, u win."
+    } else if (getComputerChoice() == "scissors" && playerSelection == "paper"){
+        return "What a nub, u lose."
+    } else if (getComputerChoice() == "scissors" && playerSelection == "scissors"){
+        return "Boring. Draw game."
+    } else return "Wrong input, which means cars are better."    
+}
+alert(firstRound())
