@@ -41,6 +41,6 @@ function firstRound(){
         return "What a nub, u lose."
     } else if (getComputerChoice() == "scissors" && playerSelection == "scissors"){
         return "Boring. Draw game."
-    } else return "Wrong input, which means cars are better."    
+    } else return "Wrong input, which means trains are better."    
 }
 alert(firstRound())
