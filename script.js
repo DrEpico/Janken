@@ -43,15 +43,15 @@ function playRound(){
         return "Boring. Draw game."
     } else return "Wrong input, which means trains are better."    
 }
-//alert(playRound());
+alert(playRound())
 
 //Janken function calls the playRound function inside of it 5 times to play a 5 round game that keeps score and reports a winner at the end.
     //why does the janken function stop after executing one loop out of 5 => because after i leave the fucntion the rest of the for loop is not executed. 
     //to execute the all 5, the for loop needs to be "somewhere else".
-function Janken(){
-    for (let i = 0; i < 5; i++){
-        playRound(i);
-        }       
-}
-console.log(Janken());
-//alert(Janken());
+    function Janken(){
+        for (let i = 0; i < 5; i++){
+            playRound(i);
+            }       
+    }
+    console.log(Janken());
+    //alert(Janken());
