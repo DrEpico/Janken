@@ -25,21 +25,21 @@ console.log(playerSelection);
 function playRound(){
     if (getComputerChoice() == "rock" && playerSelection == "paper"){
         return "Ayo dam, u win." 
-    } else if (getComputerChoice() === "rock" && playerSelection == "scissors"){
+    } else if (getComputerChoice() === "rock" && playerSelection === "scissors"){
         return "What a nub, u lose."
-    } else if (getComputerChoice() === "rock" && playerSelection == "rock"){
+    } else if (getComputerChoice() === "rock" && playerSelection === "rock"){
         return "Boring. Draw game."
-    } else if (getComputerChoice() === "paper" && playerSelection == "scissors"){
+    } else if (getComputerChoice() === "paper" && playerSelection === "scissors"){
         return "Ayo dam, u win."
-    } else if (getComputerChoice() === "paper" && playerSelection == "rock"){
+    } else if (getComputerChoice() === "paper" && playerSelection === "rock"){
         return "What a nub, u lose."
-    } else if (getComputerChoice() === "paper" && playerSelection == "paper"){
+    } else if (getComputerChoice() === "paper" && playerSelection === "paper"){
         return "Boring. Draw game."
-    } else if (getComputerChoice() === "scissors" && playerSelection == "rock"){
+    } else if (getComputerChoice() === "scissors" && playerSelection === "rock"){
         return "Ayo dam, u win."
-    } else if (getComputerChoice() === "scissors" && playerSelection == "paper"){
+    } else if (getComputerChoice() === "scissors" && playerSelection === "paper"){
         return "What a nub, u lose."
-    } else if (getComputerChoice() === "scissors" && playerSelection == "scissors"){
+    } else if (getComputerChoice() === "scissors" && playerSelection === "scissors"){
         return "Boring. Draw game."
     } else return "Wrong input, which means trains are better."    
 }
