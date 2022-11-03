@@ -22,25 +22,36 @@ console.log(getComputerChoice());
 let playerSelection = prompt("Choose a hand by typing Rock, Paper or Scissors").toLowerCase()
 console.log(playerSelection);
 
-function firstRound(){
+function playRound(){
     if (getComputerChoice() == "rock" && playerSelection == "paper"){
         return "Ayo dam, u win." 
-    } else if (getComputerChoice() == "rock" && playerSelection == "scissors"){
+    } else if (getComputerChoice() === "rock" && playerSelection == "scissors"){
         return "What a nub, u lose."
-    } else if (getComputerChoice() == "rock" && playerSelection == "rock"){
+    } else if (getComputerChoice() === "rock" && playerSelection == "rock"){
         return "Boring. Draw game."
-    } else if (getComputerChoice() == "paper" && playerSelection == "scissors"){
+    } else if (getComputerChoice() === "paper" && playerSelection == "scissors"){
         return "Ayo dam, u win."
-    } else if (getComputerChoice() == "paper" && playerSelection == "rock"){
+    } else if (getComputerChoice() === "paper" && playerSelection == "rock"){
         return "What a nub, u lose."
-    } else if (getComputerChoice() == "paper" && playerSelection == "paper"){
+    } else if (getComputerChoice() === "paper" && playerSelection == "paper"){
         return "Boring. Draw game."
-    } else if (getComputerChoice() == "scissors" && playerSelection == "rock"){
+    } else if (getComputerChoice() === "scissors" && playerSelection == "rock"){
         return "Ayo dam, u win."
-    } else if (getComputerChoice() == "scissors" && playerSelection == "paper"){
+    } else if (getComputerChoice() === "scissors" && playerSelection == "paper"){
         return "What a nub, u lose."
-    } else if (getComputerChoice() == "scissors" && playerSelection == "scissors"){
+    } else if (getComputerChoice() === "scissors" && playerSelection == "scissors"){
         return "Boring. Draw game."
     } else return "Wrong input, which means trains are better."    
 }
-alert(firstRound())
+//alert(playRound());
+
+//Janken function calls the playRound function inside of it 5 times to play a 5 round game that keeps score and reports a winner at the end.
+    //why does the janken function stop after executing one loop out of 5 => because after i leave the fucntion the rest of the for loop is not executed. 
+    //to execute the all 5, the for loop needs to be "somewhere else".
+function Janken(){
+    for (let i = 0; i < 5; i++){
+        playRound(i);
+        }       
+}
+console.log(Janken());
+//alert(Janken());
