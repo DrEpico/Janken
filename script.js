@@ -12,11 +12,14 @@ function getComputerChoice(){
         return "scissors"
     }   
 }
+//Result of the getComputerChoice function is now stored as a constant which means that the playRound funtion now has only one hand from the getComputerChoice function 
+//to compare with the user input.
 const computerChoice = getComputerChoice();
 console.log(computerChoice);
 
-// a function that plays a single round of Rock Paper Scissors. 
-    //the function takes two parameters of playerSelection and computerSelection.
+//OVERVIEW OF THE END PRODUCT
+//a function that plays a single round of Rock Paper Scissors. 
+    //the function takes two parameters of playerSelection and computerSelection.--
         //playerSelection could be taken from a prompt (case insensitive).
     //then returns a string that declares the winner of the round. 
 
