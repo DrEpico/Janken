@@ -12,7 +12,8 @@ function getComputerChoice(){
         return "scissors"
     }   
 }
-console.log(getComputerChoice());
+const computerChoice = getComputerChoice();
+console.log(computerChoice);
 
 // a function that plays a single round of Rock Paper Scissors. 
     //the function takes two parameters of playerSelection and computerSelection.
@@ -23,23 +24,23 @@ let playerSelection = prompt("Choose a hand by typing Rock, Paper or Scissors").
 console.log(playerSelection);
 
 function playRound(){
-    if (getComputerChoice() == "rock" && playerSelection == "paper"){
+    if (computerChoice == "rock" && playerSelection == "paper"){
         return "Ayo dam, u win." 
-    } else if (getComputerChoice() === "rock" && playerSelection == "scissors"){
+    } else if (computerChoice == "rock" && playerSelection == "scissors"){
         return "What a nub, u lose."
-    } else if (getComputerChoice() === "rock" && playerSelection == "rock"){
+    } else if (computerChoice == "rock" && playerSelection == "rock"){
         return "Boring. Draw game."
-    } else if (getComputerChoice() === "paper" && playerSelection == "scissors"){
+    } else if (computerChoice == "paper" && playerSelection == "scissors"){
         return "Ayo dam, u win."
-    } else if (getComputerChoice() === "paper" && playerSelection == "rock"){
+    } else if (computerChoice == "paper" && playerSelection == "rock"){
         return "What a nub, u lose."
-    } else if (getComputerChoice() === "paper" && playerSelection == "paper"){
+    } else if (computerChoice == "paper" && playerSelection == "paper"){
         return "Boring. Draw game."
-    } else if (getComputerChoice() === "scissors" && playerSelection == "rock"){
+    } else if (computerChoice == "scissors" && playerSelection == "rock"){
         return "Ayo dam, u win."
-    } else if (getComputerChoice() === "scissors" && playerSelection == "paper"){
+    } else if (computerChoice == "scissors" && playerSelection == "paper"){
         return "What a nub, u lose."
-    } else if (getComputerChoice() === "scissors" && playerSelection == "scissors"){
+    } else if (computerChoice == "scissors" && playerSelection == "scissors"){
         return "Boring. Draw game."
     } else return "Wrong input, which means trains are better."    
 }
