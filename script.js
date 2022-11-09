@@ -5,9 +5,9 @@
     //then returns a string that declares the winner of the round. 
 
 // scores 
-let playerScore = 0;
+let playerScore = 1;
 
-let computerScore = 0;
+let computerScore = 1;
 
 // a fucntion that randomely return either "rock", "paper" or "scissors"
     // a function that calls the random number function which returns a number netween 0 to 1. Multiplying the retunerned number by 3 will give numbers between 0, 1 or 2.
@@ -37,31 +37,31 @@ function playRound(){
     } else if (computerChoice === "rock" && playerSelection === "scissors"){
         return "What a nub, u lose.\nScore: " + computerScore++;
     } else if (computerChoice === "rock" && playerSelection === "rock"){
-        return "Boring. Draw game." //TODO:
+        return "Boring. Draw game." //TODO: a new loop maybe at some point for the draw conditions but cba rn 💀
     } else if (computerChoice === "paper" && playerSelection === "scissors"){
         return "Ayo dam, u win.\nScore: " + playerScore++;
     } else if (computerChoice === "paper" && playerSelection === "rock"){
         return "What a nub, u lose.\nScore: " + computerScore++;
     } else if (computerChoice === "paper" && playerSelection === "paper"){
-        return "Boring. Draw game." //TODO:
+        return "Boring. Draw game." //TODO: a new loop maybe at some point for the draw conditions but cba rn 💀
     } else if (computerChoice === "scissors" && playerSelection === "rock"){
         return "Ayo dam, u win.\nScore: " + playerScore++;
     } else if (computerChoice === "scissors" && playerSelection === "paper"){
         return "What a nub, u lose.\nScore: " + computerScore++;
     } else if (computerChoice === "scissors" && playerSelection === "scissors"){
-        return "Boring. Draw game." //TODO:
+        return "Boring. Draw game." //TODO: a new loop maybe at some point for the draw conditions but cba rn 💀
     } else return "What a nub, u lose.\nScore: " + computerScore++;    
 }
 
-//Janken function calls the playRound function inside of it 5 times to play a 5 round game that keeps score and reports a winner at the end.
-    //why does the janken function stop after executing one loop out of 5 => because after i leave the fucntion the rest of the for loop is not executed. 
-    //to execute the all 5, the for loop needs to be "somewhere else".
+//Janken() calls the playRound() inside of it 5 times to play a 5 round game that keeps score and reports a winner at the end.
 function Janken(){
     for (let i = 0; i <= 4; i++){
         alert(playRound());
         } 
+        alert(getFinalResult());
 }
 
+//getFinalResult() was moved to inside of the playRound() to ensure this function is only ran at the end of the all loops.
 function getFinalResult(){
     if (playerScore == computerScore){
         return "DRAW"
@@ -69,11 +69,11 @@ function getFinalResult(){
         return "You Lose..."
     } else if (playerScore >> computerScore){
         return "YOU WIN!!!"
-    }
+    } 
 }
-alert(getFinalResult());
+
 
 //for debugging ------------------------------
 console.log(Janken());
-console.log("player: " + playerScore);
-console.log("computer: " + computerScore);
+console.log("player: " + (playerScore - 1));
+console.log("computer: " + (computerScore - 1));
