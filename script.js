@@ -65,11 +65,11 @@ function Janken(){
 function getFinalResult(){
     if (playerScore == computerScore){
         return "DRAW"
-    } else if (computerScore >> playerScore){
+    } else if (computerScore > playerScore){
         return "You Lose..."
-    } else if (playerScore >> computerScore){
-        return "YOU WIN!!!"
-    } 
+    } else if (playerScore > computerScore){
+        return "YOU WIN!!!";
+    } else return "mamma mia";
 }
 
 
