@@ -33,24 +33,24 @@ function playRound(){
     console.log(computerChoice); //for debugging
     
     if (computerChoice == "rock" && playerSelection == "paper"){
-        return "Ayo dam, u win.\nScore: " + playerScore++;
+        return "Ayo dam, u win.\nPlayer" + " " + playerScore++ + " " + "vs" + " " + (computerScore - 1) + " " + "Computer";
     } else if (computerChoice === "rock" && playerSelection === "scissors"){
-        return "What a nub, u lose.\nScore: " + computerScore++;
+        return "What a nub, u lose.\nPlayer" + " " + (playerScore - 1) + " " + "vs" + " " + computerScore++ + " " + "Computer";
     } else if (computerChoice === "rock" && playerSelection === "rock"){
-        return "Boring. Draw game." //TODO: a new loop maybe at some point for the draw conditions but cba rn 💀
+        return "Boring. Draw game." + " " + (playerScore - 1) + " " + "vs" + " " + (computerScore - 1) + " " + "Computer";//TODO: a new loop maybe at some point for the draw conditions but cba rn 💀
     } else if (computerChoice === "paper" && playerSelection === "scissors"){
-        return "Ayo dam, u win.\nScore: " + playerScore++;
+        return "Ayo dam, u win.\nPlayer" + " " + playerScore++ + " " + "vs" + " " + (computerScore - 1) + " " + "Computer";
     } else if (computerChoice === "paper" && playerSelection === "rock"){
-        return "What a nub, u lose.\nScore: " + computerScore++;
+        return "What a nub, u lose.\nPlayer" + " " + (playerScore - 1) + " " + "vs" + " " + computerScore++ + " " + "Computer";
     } else if (computerChoice === "paper" && playerSelection === "paper"){
-        return "Boring. Draw game." //TODO: a new loop maybe at some point for the draw conditions but cba rn 💀
+        return "Boring. Draw game." + " " + (playerScore - 1) + " " + "vs" + " " + (computerScore - 1) + " " + "Computer";//TODO: a new loop maybe at some point for the draw conditions but cba rn 💀
     } else if (computerChoice === "scissors" && playerSelection === "rock"){
-        return "Ayo dam, u win.\nScore: " + playerScore++;
+        return "Ayo dam, u win.\nPlayer" + " " + playerScore++ + " " + "vs" + " " + (computerScore - 1) + " " + "Computer";
     } else if (computerChoice === "scissors" && playerSelection === "paper"){
-        return "What a nub, u lose.\nScore: " + computerScore++;
+        return "What a nub, u lose.\nPlayer" + " " + (playerScore - 1) + " " + "vs" + " " + computerScore++ + " " + "Computer";
     } else if (computerChoice === "scissors" && playerSelection === "scissors"){
-        return "Boring. Draw game." //TODO: a new loop maybe at some point for the draw conditions but cba rn 💀
-    } else return "What a nub, u lose.\nScore: " + computerScore++;    
+        return "Boring. Draw game." + " " + (playerScore - 1) + " " + "vs" + " " + (computerScore - 1) + " " + "Computer"; //TODO: a new loop maybe at some point for the draw conditions but cba rn 💀
+    } else return "What a nub, u lose.\nPlayer" + " " + (playerScore - 1) + " " + "vs" + " " + computerScore++ + " " + "Computer";   
 }
 
 //Janken() calls the playRound() inside of it 5 times to play a 5 round game that keeps score and reports a winner at the end.
