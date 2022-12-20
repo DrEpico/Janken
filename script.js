@@ -15,15 +15,14 @@ const buttons = document.querySelectorAll('button');
 // we use the .forEach method to iterate through each button
 buttons.forEach((button) => {
 
-    
     // and for each one we add a 'click' listener
     button.addEventListener('click', () => {
         if (button.id == 1){
-            return console.log("rock");
+            return playerSelection = "rock", console.log("rock");
         } else if (button.id == 2){
-            return console.log("paper");
+            return playerSelection = "paper", console.log("paper");
         } else if (button.id == 3){
-            return console.log("scissors");
+            return playerSelection = "scissors", console.log("scissors");
         }
     });
 });
