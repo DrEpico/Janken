@@ -9,14 +9,30 @@ let playerScore = 1;
 
 let computerScore = 1;
 
-const btn = document.querySelector("#btn1");
-btn.onclick = () => alert("amogus");
+// buttons is a node list. It looks and acts much like an array.
+const buttons = document.querySelectorAll('button');
 
+// we use the .forEach method to iterate through each button
+buttons.forEach((button) => {
+
+    
+    // and for each one we add a 'click' listener
+    button.addEventListener('click', () => {
+        if (button.id == 1){
+            return console.log("rock");
+        } else if (button.id == 2){
+            return console.log("paper");
+        } else if (button.id == 3){
+            return console.log("scissors");
+        }
+    });
+});
 
 
 // a fucntion that randomely return either "rock", "paper" or "scissors"
     // a function that calls the random number function which returns a number netween 0 to 1. Multiplying the retunerned number by 3 will give numbers between 0, 1 or 2.
     // the function will return either "rock", "paper" or "scissors" based on the number that getComputerChoice() returns. (0=rock, 1=paper, 2=scissors) 
+    
 function playRound(){
     function getComputerChoice(){ 
         let randomNumber = Math.floor(Math.random() * 3);
