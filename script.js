@@ -10,23 +10,12 @@ let playerScore = 1;
 let computerScore = 1;
 
 // buttons is a node list. It looks and acts much like an array.
-const buttons = document.querySelectorAll('button');
-
-// we use the .forEach method to iterate through each button
-buttons.forEach((button) => {
-
-    // and for each one we add a 'click' listener
-    button.addEventListener('click', () => {
-        if (button.id == 1){
-            return playerSelection = "rock", console.log("rock");
-        } else if (button.id == 2){
-            return playerSelection = "paper", console.log("paper");
-        } else if (button.id == 3){
-            return playerSelection = "scissors", console.log("scissors");
-        }
-    });
-});
-
+let playerSelection;
+const btn1 = document.querySelector("#container #btn1");
+btn1.addEventListener("click", function() {
+    playerSelection = "rock";
+    console.log(playerSelection); //for debugging
+});     
 
 // a fucntion that randomely return either "rock", "paper" or "scissors"
     // a function that calls the random number function which returns a number netween 0 to 1. Multiplying the retunerned number by 3 will give numbers between 0, 1 or 2.
@@ -45,7 +34,7 @@ function playRound(){
         }
     }
 
-    let playerSelection = prompt("Choose a hand by typing Rock, Paper or Scissors. First to 3 wins!").toLowerCase()
+    //let playerSelection = prompt("Choose a hand by typing Rock, Paper or Scissors. First to 3 wins!").toLowerCase()
     console.log(playerSelection); //for debugging
 
     // Result of the getComputerChoice function is stored as a variable and not a constant (to avoid the "vs the same computerChoice for 5 rounds" issue).
