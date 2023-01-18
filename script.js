@@ -14,8 +14,22 @@ let playerSelection;
 const btn1 = document.querySelector("#container #btn1");
 btn1.addEventListener("click", function() {
     playerSelection = "rock";
-    console.log(playerSelection); //for debugging
-});     
+    return Janken();
+    
+});
+
+const btn2 = document.querySelector("#container #btn2");
+btn2.addEventListener("click", function() {
+    playerSelection = "paper";
+    return Janken();
+});
+
+const btn3 = document.querySelector("#container #btn3");
+btn3.addEventListener("click", function() {
+    playerSelection = "scissors";
+    return Janken();
+});
+console.log(playerSelection); //for debugging
 
 // a fucntion that randomely return either "rock", "paper" or "scissors"
     // a function that calls the random number function which returns a number netween 0 to 1. Multiplying the retunerned number by 3 will give numbers between 0, 1 or 2.
@@ -41,20 +55,33 @@ function playRound(){
     let computerChoice = getComputerChoice();
     console.log(computerChoice); //for debugging
     
+
+    
+    const resultsContainer = document.querySelector("#results-container");
+    
+    const playerWins = document.createElement("p");
+    playerWins.classList.add("content");
+    playerWins.textContent = "Ayo dam, u win.\nPlayer" + " " + playerScore++ + " " + "vs" + " " + (computerScore - 1) + " " + "Computer";
+
+    resultsContainer.appendChild(playerWins);
+
+
+
+
     if (computerChoice == "rock" && playerSelection == "paper"){
-        return "Ayo dam, u win.\nPlayer" + " " + playerScore++ + " " + "vs" + " " + (computerScore - 1) + " " + "Computer";
+        return resultsContainer.appendChild(playerWins);
     } else if (computerChoice === "rock" && playerSelection === "scissors"){
         return "What a nub, u lose.\nPlayer" + " " + (playerScore - 1) + " " + "vs" + " " + computerScore++ + " " + "Computer";
     } else if (computerChoice === "rock" && playerSelection === "rock"){
         return "Boring. Draw game.\n" + " " + (playerScore - 1) + " " + "vs" + " " + (computerScore - 1) + " " + "Computer";//TODO: a new loop maybe at some point for the draw conditions but cba rn 💀
     } else if (computerChoice === "paper" && playerSelection === "scissors"){
-        return "Ayo dam, u win.\nPlayer" + " " + playerScore++ + " " + "vs" + " " + (computerScore - 1) + " " + "Computer";
+        return resultsContainer.appendChild(playerWins);
     } else if (computerChoice === "paper" && playerSelection === "rock"){
         return "What a nub, u lose.\nPlayer" + " " + (playerScore - 1) + " " + "vs" + " " + computerScore++ + " " + "Computer";
     } else if (computerChoice === "paper" && playerSelection === "paper"){
         return "Boring. Draw game.\n" + " " + (playerScore - 1) + " " + "vs" + " " + (computerScore - 1) + " " + "Computer";//TODO: a new loop maybe at some point for the draw conditions but cba rn 💀
     } else if (computerChoice === "scissors" && playerSelection === "rock"){
-        return "Ayo dam, u win.\nPlayer" + " " + playerScore++ + " " + "vs" + " " + (computerScore - 1) + " " + "Computer";
+        return resultsContainer.appendChild(playerWins);
     } else if (computerChoice === "scissors" && playerSelection === "paper"){
         return "What a nub, u lose.\nPlayer" + " " + (playerScore - 1) + " " + "vs" + " " + computerScore++ + " " + "Computer";
     } else if (computerChoice === "scissors" && playerSelection === "scissors"){
@@ -64,10 +91,10 @@ function playRound(){
 
 //Janken() calls the playRound() inside of it 5 times to play a 5 round game that keeps score and reports a winner at the end.
 function Janken(){
-    for (let i = 0; i <= 4; i++){
-        alert(playRound());
-        } 
-        alert(getFinalResult());
+    //for (let i = 0; i <= 4; i++){
+        console.log(playRound());
+        //} 
+        console.log(getFinalResult());
 }
 
 //getFinalResult() was moved to inside of the playRound() to ensure this function is only ran at the end of the all loops.
