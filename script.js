@@ -22,25 +22,26 @@ buttons.forEach(button => {
     button.addEventListener("click", function() {
         playerSelection = this.innerHTML;
         playRound();
+        getComputerChoice();
         getFinalResult();
     });
 });
 
-
+function getComputerChoice() {
+        let randomNumber = Math.floor(Math.random() * 3);
+        if (randomNumber === 0) {
+            return computerChoice = "rock";
+        } else if (randomNumber === 1) {
+            return computerChoice = "paper";
+        } else if (randomNumber === 2) {
+            return computerChoice = "scissors";
+        }
+    }
 
 //playerSelection = this.innerHTML; is setting the value of the playerSelection variable to the text content of the button that was clicked.
 
 function playRound() {
-    function getComputerChoice() {
-        let randomNumber = Math.floor(Math.random() * 3);
-        if (randomNumber === 0) {
-            return "rock";
-        } else if (randomNumber === 1) {
-            return "paper";
-        } else if (randomNumber === 2) {
-            return "scissors";
-        }
-    }
+    
 
     //playerWins.textContent = "Ayo dam, u win.\nPlayer" + " " + ++playerScore + " " + "vs" + " " + computerScore + " " + "Computer";
     //playerLoses.textContent = "What a nub, u lose.\nPlayer" + " " + playerScore + " " + "vs" + " " + ++computerScore + " " + "Computer";
@@ -49,44 +50,42 @@ function playRound() {
     console.log("player: " + playerSelection);
     console.log("computer: " + getComputerChoice());
 
-    let computerChoice = getComputerChoice();
-
-    if (playerSelection === "rock" && getComputerChoice() === "scissors") {
+    if (playerSelection === "rock" && computerChoice === "scissors") {
         playerWins.textContent = "Ayo dam, u win.\nPlayer" + " " + ++playerScore + " " + "vs" + " " + computerScore + " " + "Computer";
         resultsContainer.innerHTML = "";
         resultsContainer.appendChild(playerWins);
         console.log("player wins");
     } 
 
-    else if (playerSelection === "rock" && getComputerChoice() === "paper") {
+    else if (playerSelection === "rock" && computerChoice === "paper") {
         playerLoses.textContent = "What a nub, u lose.\nPlayer" + " " + playerScore + " " + "vs" + " " + ++computerScore + " " + "Computer";
         resultsContainer.innerHTML = "";
         resultsContainer.appendChild(playerLoses);
         console.log("player loses");
     } 
 
-    else if (playerSelection === "paper" && getComputerChoice() === "rock") {
+    else if (playerSelection === "paper" && computerChoice === "rock") {
         playerWins.textContent  = "Ayo dam, u win.\nPlayer" + " " + ++playerScore + " " + "vs" + " " + computerScore + " " + "Computer";
         resultsContainer.innerHTML = "";
         resultsContainer.appendChild(playerWins);
         console.log("player wins");
     }
 
-    else if (playerSelection === "paper" && getComputerChoice() === "scissors") {
+    else if (playerSelection === "paper" && computerChoice === "scissors") {
         playerLoses.textContent = "What a nub, u lose.\nPlayer" + " " + playerScore + " " + "vs" + " " + ++computerScore + " " + "Computer";
         resultsContainer.innerHTML = "";
         resultsContainer.appendChild(playerLoses);
         console.log("player loses");
     }
 
-    else if (playerSelection === "scissors" && getComputerChoice() === "paper") {
+    else if (playerSelection === "scissors" && computerChoice === "paper") {
         playerWins.textContent = "Ayo dam, u win.\nPlayer" + " " + ++playerScore + " " + "vs" + " " + computerScore + " " + "Computer";
         resultsContainer.innerHTML = "";
         resultsContainer.appendChild(playerWins);
         console.log("player wins");
     }
 
-    else if (playerSelection === "scissors" && getComputerChoice() === "rock") {
+    else if (playerSelection === "scissors" && computerChoice === "rock") {
         playerLoses.textContent = "What a nub, u lose.\nPlayer" + " " + playerScore + " " + "vs" + " " + ++computerScore + " " + "Computer";
         resultsContainer.innerHTML = "";
         resultsContainer.appendChild(playerLoses);
