@@ -16,7 +16,6 @@ totalWin.classList.add("content");
 const totalLose = document.createElement("p");
 totalLose.classList.add("content");
 
-
 const buttons = document.querySelectorAll("#container button");
 buttons.forEach(button => {
     button.addEventListener("click", function() {
@@ -26,6 +25,7 @@ buttons.forEach(button => {
         getFinalResult();
     });
 });
+//playerSelection = this.innerHTML; is setting the value of the playerSelection variable to the text content of the button that was clicked.
 
 function getComputerChoice() {
         let randomNumber = Math.floor(Math.random() * 3);
@@ -38,79 +38,52 @@ function getComputerChoice() {
         }
     }
 
-//playerSelection = this.innerHTML; is setting the value of the playerSelection variable to the text content of the button that was clicked.
-
 function playRound() {
-    
-
-    //playerWins.textContent = "Ayo dam, u win.\nPlayer" + " " + ++playerScore + " " + "vs" + " " + computerScore + " " + "Computer";
-    //playerLoses.textContent = "What a nub, u lose.\nPlayer" + " " + playerScore + " " + "vs" + " " + ++computerScore + " " + "Computer";
-    //playerDraws.textContent = "Boring. Draw game.\n" + " " + playerScore + " " + "vs" + " " + computerScore + " " + "Computer";
+    playerWins.textContent = "Ayo dam, u win.\nPlayer" + " " + ++playerScore + " " + "vs" + " " + computerScore + " " + "Computer";
+    playerLoses.textContent = "What a nub, u lose.\nPlayer" + " " + playerScore + " " + "vs" + " " + ++computerScore + " " + "Computer";
+    playerDraws.textContent = "Boring. Draw game.\n" + " " + playerScore + " " + "vs" + " " + computerScore + " " + "Computer";
 
     console.log("player: " + playerSelection);
     console.log("computer: " + getComputerChoice());
 
     if (playerSelection === "rock" && computerChoice === "scissors") {
-        playerWins.textContent = "Ayo dam, u win.\nPlayer" + " " + ++playerScore + " " + "vs" + " " + computerScore + " " + "Computer";
+        playerWins.textContent
         resultsContainer.innerHTML = "";
         resultsContainer.appendChild(playerWins);
         console.log("player wins");
-    } 
-
-    else if (playerSelection === "rock" && computerChoice === "paper") {
-        playerLoses.textContent = "What a nub, u lose.\nPlayer" + " " + playerScore + " " + "vs" + " " + ++computerScore + " " + "Computer";
+    } else if (playerSelection === "rock" && computerChoice === "paper") {
+        playerLoses.textContent
         resultsContainer.innerHTML = "";
         resultsContainer.appendChild(playerLoses);
         console.log("player loses");
-    } 
-
-    else if (playerSelection === "paper" && computerChoice === "rock") {
-        playerWins.textContent  = "Ayo dam, u win.\nPlayer" + " " + ++playerScore + " " + "vs" + " " + computerScore + " " + "Computer";
+    } else if (playerSelection === "paper" && computerChoice === "rock") {
+        playerWins.textContent
         resultsContainer.innerHTML = "";
         resultsContainer.appendChild(playerWins);
         console.log("player wins");
-    }
-
-    else if (playerSelection === "paper" && computerChoice === "scissors") {
-        playerLoses.textContent = "What a nub, u lose.\nPlayer" + " " + playerScore + " " + "vs" + " " + ++computerScore + " " + "Computer";
+    } else if (playerSelection === "paper" && computerChoice === "scissors") {
+        playerLoses.textContent
         resultsContainer.innerHTML = "";
         resultsContainer.appendChild(playerLoses);
         console.log("player loses");
-    }
-
-    else if (playerSelection === "scissors" && computerChoice === "paper") {
-        playerWins.textContent = "Ayo dam, u win.\nPlayer" + " " + ++playerScore + " " + "vs" + " " + computerScore + " " + "Computer";
+    } else if (playerSelection === "scissors" && computerChoice === "paper") {
+        playerWins.textContent 
         resultsContainer.innerHTML = "";
         resultsContainer.appendChild(playerWins);
         console.log("player wins");
-    }
-
-    else if (playerSelection === "scissors" && computerChoice === "rock") {
-        playerLoses.textContent = "What a nub, u lose.\nPlayer" + " " + playerScore + " " + "vs" + " " + ++computerScore + " " + "Computer";
+    } else if (playerSelection === "scissors" && computerChoice === "rock") {
+        playerLoses.textContent
         resultsContainer.innerHTML = "";
         resultsContainer.appendChild(playerLoses);
         console.log("player loses");
-    } 
-
-    else{
-        playerDraws.textContent = "Boring. Draw game.\n" + " " + playerScore + " " + "vs" + " " + computerScore + " " + "Computer";
+    } else {
+        playerDraws.textContent
         resultsContainer.innerHTML = "";
         resultsContainer.appendChild(playerDraws);
         console.log("player draws");
     }
 }
 
-
-//Janken() calls the playRound() inside of it 5 times to play a 5 round game that keeps score and reports a winner at the end.
-//function Janken(){
-    //for (let i = 0; i <= 4; i++){
-        //playRound();
-        //} 
-        //getFinalResult();
-//}
-
-
-//getFinalResult() was moved to inside of the playRound() to ensure this function is only ran at the end of the all loops.
 function getFinalResult(){
     if (computerScore === 5){
         computerScore = 0;
@@ -126,9 +99,3 @@ function getFinalResult(){
         finalResultContainer.appendChild(totalWin);
     } 
 }
-
-
-//for debugging ------------------------------
-//console.log(Janken());
-//console.log("player: " + (playerScore - 1));
-//console.log("computer: " + (computerScore - 1));
