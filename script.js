@@ -39,45 +39,45 @@ function getComputerChoice() {
     }
 
 function playRound() {
-    playerWins.textContent = "Ayo dam, u win.\nPlayer" + " " + ++playerScore + " " + "vs" + " " + computerScore + " " + "Computer";
-    playerLoses.textContent = "What a nub, u lose.\nPlayer" + " " + playerScore + " " + "vs" + " " + ++computerScore + " " + "Computer";
-    playerDraws.textContent = "Boring. Draw game.\n" + " " + playerScore + " " + "vs" + " " + computerScore + " " + "Computer";
+    //playerWins.textContent = "Ayo dam, u win.\nPlayer" + " " + ++playerScore + " " + "vs" + " " + computerScore + " " + "Computer";
+    //playerLoses.textContent = "What a nub, u lose.\nPlayer" + " " + playerScore + " " + "vs" + " " + ++computerScore + " " + "Computer";
+    //playerDraws.textContent = "Boring. Draw game.\n" + " " + playerScore + " " + "vs" + " " + computerScore + " " + "Computer";
 
     console.log("player: " + playerSelection);
     console.log("computer: " + getComputerChoice());
 
     if (playerSelection === "rock" && computerChoice === "scissors") {
-        playerWins.textContent
+        playerWins.textContent= "Ayo dam, u win.\nPlayer" + " " + ++playerScore + " " + "vs" + " " + computerScore + " " + "Computer";
         resultsContainer.innerHTML = "";
         resultsContainer.appendChild(playerWins);
         console.log("player wins");
     } else if (playerSelection === "rock" && computerChoice === "paper") {
-        playerLoses.textContent
+        playerLoses.textContent = "What a nub, u lose.\nPlayer" + " " + playerScore + " " + "vs" + " " + ++computerScore + " " + "Computer";
         resultsContainer.innerHTML = "";
         resultsContainer.appendChild(playerLoses);
         console.log("player loses");
     } else if (playerSelection === "paper" && computerChoice === "rock") {
-        playerWins.textContent
+        playerWins.textContent= "Ayo dam, u win.\nPlayer" + " " + ++playerScore + " " + "vs" + " " + computerScore + " " + "Computer";
         resultsContainer.innerHTML = "";
         resultsContainer.appendChild(playerWins);
         console.log("player wins");
     } else if (playerSelection === "paper" && computerChoice === "scissors") {
-        playerLoses.textContent
+        playerLoses.textContent = "What a nub, u lose.\nPlayer" + " " + playerScore + " " + "vs" + " " + ++computerScore + " " + "Computer";
         resultsContainer.innerHTML = "";
         resultsContainer.appendChild(playerLoses);
         console.log("player loses");
     } else if (playerSelection === "scissors" && computerChoice === "paper") {
-        playerWins.textContent 
+        playerWins.textContent= "Ayo dam, u win.\nPlayer" + " " + ++playerScore + " " + "vs" + " " + computerScore + " " + "Computer"; 
         resultsContainer.innerHTML = "";
         resultsContainer.appendChild(playerWins);
         console.log("player wins");
     } else if (playerSelection === "scissors" && computerChoice === "rock") {
-        playerLoses.textContent
+        playerLoses.textContent = "What a nub, u lose.\nPlayer" + " " + playerScore + " " + "vs" + " " + ++computerScore + " " + "Computer";
         resultsContainer.innerHTML = "";
         resultsContainer.appendChild(playerLoses);
         console.log("player loses");
     } else {
-        playerDraws.textContent
+        playerDraws.textContent = "Boring. Draw game.\n" + " " + playerScore + " " + "vs" + " " + computerScore + " " + "Computer";
         resultsContainer.innerHTML = "";
         resultsContainer.appendChild(playerDraws);
         console.log("player draws");
